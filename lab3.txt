@@ -1,0 +1,43 @@
+//Завдання №5
+using System;
+
+namespace Projekt_Oserska
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+										Console.Write("Enter the number of digits in the array: ");
+            int digits = int.Parse(Console.ReadLine());
+            int[] array = new int[digits];
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write($"\nEnter the numbers {i}:\t");
+                array[i] = int.Parse(Console.ReadLine());
+            }
+            int moda = 0;
+            int modaCount = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                int modaTemp = array[i];
+                int modaCountTemp = 0;
+                for (int j = 0; j < array.Length; j++)
+                {
+                    if (array[i] == array[j])
+
+                    {
+                        modaCountTemp++;
+                    }
+                }
+                if (modaCountTemp > modaCount)
+                {
+                    moda = modaTemp;
+                    modaCount = modaCountTemp;
+                }
+            }
+            Console.WriteLine("\nModa: " + moda);
+
+
+        }
+    }
+}
